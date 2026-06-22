@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>简易指南 · 德州扑克在线</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f5f8fc;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #1e2b3c;
+            line-height: 1.6;
+            padding: 2rem 1.5rem 3rem;
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 1024px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 2.5rem;
+            box-shadow: 0 12px 32px rgba(0, 40, 60, 0.06);
+            padding: 2.5rem 2rem 3rem;
+        }
+
+        /* 蓝绿点缀 */
+        .accent-soft {
+            color: #177e89;
+        }
+        .accent-border {
+            border-left: 5px solid #2db7a8;
+            padding-left: 1.5rem;
+        }
+        .badge {
+            display: inline-block;
+            background: #d4f0ed;
+            color: #14655e;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            letter-spacing: 0.3px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: #0b3b40;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #3a5a6a;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #e1edf2;
+            padding-bottom: 1.2rem;
+        }
+
+        .story-lead {
+            font-size: 1.25rem;
+            background: #f0f9f7;
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            margin: 1.8rem 0 2.2rem;
+            line-height: 1.7;
+            box-shadow: inset 0 1px 4px rgba(45, 183, 168, 0.08);
+        }
+
+        .story-lead strong {
+            color: #116b63;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2.5rem 0 2.8rem;
+        }
+
+        .card-item {
+            background: #fafdff;
+            border-radius: 1.5rem;
+            padding: 1.6rem 1.2rem 1.4rem;
+            box-shadow: 0 4px 12px rgba(23, 126, 137, 0.06);
+            border: 1px solid #e7f0f3;
+            transition: 0.2s ease;
+        }
+
+        .card-item:hover {
+            border-color: #b3dfd9;
+            background: #ffffff;
+            box-shadow: 0 8px 18px rgba(23, 126, 137, 0.10);
+            transform: translateY(-2px);
+        }
+
+        .card-item h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.4rem;
+            color: #115d62;
+        }
+
+        .card-item p {
+            font-size: 0.95rem;
+            color: #2a4352;
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.6rem;
+            line-height: 1;
+        }
+
+        .scenario-note {
+            background: #f4fafc;
+            border-radius: 24px;
+            padding: 1.8rem 2rem;
+            margin: 2rem 0 2rem;
+        }
+
+        .scenario-note h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: #145d62;
+            margin-bottom: 0.6rem;
+        }
+
+        .faq-mini {
+            margin: 2.2rem 0 1.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem 1rem;
+        }
+
+        .faq-mini span {
+            background: #ecf5f3;
+            padding: 0.2rem 1rem 0.2rem 1rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #135e5a;
+            border: 1px solid #cde5e0;
+        }
+
+        .closing-remark {
+            margin-top: 2.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #dce9ed;
+            text-align: center;
+            font-size: 1rem;
+            color: #2b5360;
+        }
+
+        .closing-remark a {
+            color: #177e89;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 1.5px dotted #7bc2b9;
+        }
+
+        .closing-remark a:hover {
+            color: #0a4f56;
+            border-bottom-style: solid;
+        }
+
+        .footnote {
+            margin-top: 2.2rem;
+            font-size: 0.85rem;
+            color: #6f8d99;
+            text-align: right;
+            border-top: 1px solid #e3eef2;
+            padding-top: 1.2rem;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.8rem; }
+            .page { padding: 1.8rem 1.2rem 2rem; border-radius: 1.8rem; }
+            h1 { font-size: 1.8rem; }
+            .story-lead { padding: 1.2rem 1.2rem; font-size: 1.1rem; }
+            .grid-cards { gap: 1rem; }
+            .card-item { padding: 1.3rem 1rem; }
+            .scenario-note { padding: 1.4rem 1.2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-sub { font-size: 1rem; }
+            .grid-cards { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- 开场短句 -->
+    <h1>桌上风景 · 简明指南</h1>
+    <div class="hero-sub">
+        <span class="badge">新手友好</span>  &nbsp; 规则 · 直觉 · 节奏
+    </div>
+
+    <!-- 承接段落：故事感 -->
+    <div class="story-lead">
+        <strong>决定打一手牌之前</strong>，先看看底池、位置和对手的动向。<br>
+        德州扑克的乐趣往往不在输赢本身，而在于你逐渐读懂牌桌的语言。<br>
+        从翻牌到河牌，每个选择都是一次微型决策实验。<br>
+        如果你想找一个熟悉规则后再上桌的起点，不妨把下面几页当作备忘。
+    </div>
+
+    <!-- 特点列表 · 网格卡片 -->
+    <div class="grid-cards">
+        <div class="card-item">
+            <span class="card-icon">🃏</span>
+            <h3>手牌范围</h3>
+            <p>学会根据位置收紧或放宽起手牌，比盲目入池有效得多。</p>
+        </div>
+        <div class="card-item">
+            <span class="card-icon">🎯</span>
+            <h3>底池赔率</h3>
+            <p>简单估算跟注是否划算，避免被大诈唬牵着走。</p>
+        </div>
+        <div class="card-item">
+            <span class="card-icon">🧠</span>
+            <h3>位置价值</h3>
+            <p>后位每手牌都多一份信息优势，翻牌后更从容。</p>
+        </div>
+        <div class="card-item">
+            <span class="card-icon">⚖️</span>
+            <h3>情绪管理</h3>
+            <p>连续输掉几手牌后，暂停一回合往往比强行反击理智。</p>
+        </div>
+    </div>
+
+    <!-- 温和场景 / 提醒 -->
+    <div class="scenario-note">
+        <h2>📌 访问提醒</h2>
+        <p style="margin-bottom: 0.6rem;">
+            如果你刚接触 <a href="https://dzpuke.com" style="color:#177e89; text-decoration: none; border-bottom: 1.5px dotted #7bc2b9; font-weight: 500;">德州扑克在线</a> 的环境，
+            建议先花十分钟熟悉界面——按钮位置、加注滑条、底池显示。
+        </p>
+        <p>
+            很多平台会提供「练习桌」或低额桌，那是观察牌桌动态的好地方。<br>
+            不要急着参与每一手牌；看几圈，感受对手的下注尺度，比任何教程都直接。
+        </p>
+        <!-- FAQ 摘要 -->
+        <div class="faq-mini">
+            <span>❓ 翻牌前怎么玩？</span>
+            <span>❓ 持续下注频率</span>
+            <span>❓ 怎么识别松凶玩家</span>
+            <span>❓ 短码策略</span>
+        </div>
+        <p style="font-size: 0.95rem; color: #346672;">
+            更细致的问答可以在网站内找到，这里只是帮你快速建立心理模型。
+        </p>
+    </div>
+
+    <!-- 温和结尾 -->
+    <div class="closing-remark">
+        <p>熟悉规则之后，你会慢慢找到自己的牌桌节奏。</p>
+        <p style="margin-top: 0.4rem;">
+            祝你在 <a href="https://dzpuke.com">德州扑克在线</a> 的时光里，
+            多一些清晰的判断，少一些冲动的跟注。
+        </p>
+    </div>
+
+    <div class="footnote">
+        一点提醒 · 游戏有波动，决策比结果更值得复盘
+    </div>
+</div>
+</body>
+</html>
